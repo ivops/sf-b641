@@ -1,0 +1,11 @@
+---
+  - name: "SF B6.4.1 task"
+    hosts: localhost
+    connection: local 
+    tasks:
+
+    - name: "start mysqld service"
+      shell: "sudo systemctl start mysql.service"
+      register: "output"
+
+    - debug: var=output.stdout_lines
